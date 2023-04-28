@@ -35,7 +35,7 @@ export const customFormat = (): Format =>
     } = meta;
 
     if (splat) {
-      const splatObj = splat.filter((s: unknown) => s);
+      const splatObj = splat.filter((s: unknown) => typeof s === "string");
       if (splatObj.length > 0) {
         metadata["i"] = [...splatObj];
       }
